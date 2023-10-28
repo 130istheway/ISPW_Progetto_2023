@@ -16,10 +16,11 @@ public class articoliAlimentari extends articoli {
     }
 
     public void setIngredienti(List<String> ingredienti) {
-            this.ingredienti = ingredienti;
+        this.ingredienti = ingredienti;
     }
 
     public void setPeso(double peso) {
+        this.peso = peso;
     }
 
     public List<String> getIngredienti() {
