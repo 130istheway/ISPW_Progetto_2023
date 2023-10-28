@@ -54,10 +54,15 @@ public class pane extends articoliAlimentari{
         return descrizzione;
     }
 
-
+    /**
+     * Modifica la qunatità di questa istanza con la possibilità di avere anche porzioni tipo 1/4 1/2 3/4
+     * 
+     * @param quantita É la quantità che voglio avere
+     * @return [boolean] flase se l'operazione non è avvenuta per colpa della quantità che era maggiore di quella disponibile oppure la quantita disponibile è minore di 1/4
+     */
     public boolean Cambia_Quantita_articolo(float quantita){
 
-        if (getQuantita_articolo() > quantita && getQuantita_articolo() > 0){
+        if (getQuantita_articolo() > quantita && quantita > ((float)(1/4))){
             setQuantita_articolo(quantita);
             return true;
         }
