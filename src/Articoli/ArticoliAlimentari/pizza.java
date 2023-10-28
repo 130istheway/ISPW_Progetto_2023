@@ -51,7 +51,7 @@ public class pizza extends articoliAlimentari{
     }
 
 
-    public boolean Cambia_Quantita_articolo(float quantita){
+    public boolean Cambia_Quantita_articolo(int quantita){
 
         if (getQuantita_articolo() > quantita && getQuantita_articolo() > 0){
             setQuantita_articolo(quantita);
