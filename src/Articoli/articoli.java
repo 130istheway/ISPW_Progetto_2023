@@ -10,8 +10,8 @@ public class articoli {
 
 
 
-    public articoli(int id, String nome_articolo, double prezzo_articolo, float quantita_articolo){
-        setId(id);
+    public articoli(String nome_articolo, double prezzo_articolo, float quantita_articolo){
+        setId(get_Random());
         setNome_articolo(nome_articolo);
         setPrezzo_articolo(prezzo_articolo);
         setQuantita_articolo(quantita_articolo);
@@ -49,6 +49,10 @@ public class articoli {
 
     public float getQuantita_articolo() {
         return quantita_articolo;
+    }
+
+    private int get_Random(){
+        return (int)Math.abs((int)Math.random());
     }
     
 }

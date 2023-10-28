@@ -11,8 +11,8 @@ public class pane extends articoliAlimentari{
     private String descrizzione;
 
 
-    public pane(int id, String nome_articolo, double prezzo_articolo, float quantita_articolo, List<String> ingredienti, double peso, int tempoCottura, int tempoLievitatura, boolean lievitatura, String descrizzione){
-        super(id, nome_articolo, prezzo_articolo, quantita_articolo, ingredienti, peso);
+    public pane(String nome_articolo, double prezzo_articolo, float quantita_articolo, List<String> ingredienti, double peso, int tempoCottura, int tempoLievitatura, boolean lievitatura, String descrizzione){
+        super(nome_articolo, prezzo_articolo, quantita_articolo, ingredienti, peso);
         setTempoCottura(tempoCottura);
         setLievitatura(lievitatura);
         setLievitatura(lievitatura);
