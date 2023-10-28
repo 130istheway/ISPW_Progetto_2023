@@ -5,7 +5,7 @@ import Articoli.articoli;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class articoliAlimentari extends articoli {
+public class articoliAlimentari extends articoli {
     private List<String> ingredienti = new ArrayList<>();
     private double peso;
 
@@ -23,5 +23,5 @@ public abstract class articoliAlimentari extends articoli {
         return peso;
     }
 
-    
+
 }

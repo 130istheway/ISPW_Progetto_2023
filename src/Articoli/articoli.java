@@ -2,11 +2,26 @@ package Articoli;
 
 
 
-public abstract class articoli {
+public class articoli {
     private int id;
     private String nome_articolo;
     private double prezzo_articolo;
-    protected float quantita_articolo;
+    private float quantita_articolo;
+
+
+
+    articoli articoli(int id, String nome_articolo, double prezzo_articolo, float quantita_articolo){
+        setId(id);
+        setNome_articolo(nome_articolo);
+        setPrezzo_articolo(prezzo_articolo);
+        setQuantita_articolo(quantita_articolo);
+
+        return this;
+
+    }
+
+
+
 
     public void setId(int id) {
         this.id = id;
