@@ -10,20 +10,14 @@ public class articoli {
 
 
 
-    articoli articoli(int id, String nome_articolo, double prezzo_articolo, float quantita_articolo){
+    public articoli(int id, String nome_articolo, double prezzo_articolo, float quantita_articolo){
         setId(id);
         setNome_articolo(nome_articolo);
         setPrezzo_articolo(prezzo_articolo);
         setQuantita_articolo(quantita_articolo);
-
-        return this;
-
     }
 
-
-
-
-    public void setId(int id) {
+    private void setId(int id) {
         this.id = id;
     }
 
@@ -39,6 +33,8 @@ public class articoli {
         this.quantita_articolo = quantita_articolo;
     }
 
+
+    
     public int getId() {
         return id;
     }
