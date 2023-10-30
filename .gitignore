@@ -1,6 +1,9 @@
 #all documentation
 doc/
 
+#all exe files
+*.exe
+
 # Compiled class file
 *.class
 
