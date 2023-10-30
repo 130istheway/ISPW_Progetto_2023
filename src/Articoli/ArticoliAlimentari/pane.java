@@ -72,7 +72,11 @@ public class pane extends articoliAlimentari{
 
     }
 
-
+    /**
+     * Questro è un overrive
+     * 
+     * @param ingedienti 
+    */
     @Override
     public void setIngredienti(List<String> ingredienti) {
         if (ingredienti.size() == 0) {

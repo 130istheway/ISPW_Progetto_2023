@@ -1,6 +1,9 @@
 #all documentation
 doc/
 
+#all user_utiliti file files
+*.exe.lnk
+
 # Compiled class file
 *.class
 
