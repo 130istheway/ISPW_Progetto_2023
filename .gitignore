@@ -2,9 +2,7 @@
 doc/
 
 #all user_utiliti file files
-documentation.exe.lnk
-execute.exe.lnk
-gitpush.exe.lnk
+*.exe.lnk
 
 # Compiled class file
 *.class
