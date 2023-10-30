@@ -1,8 +1,10 @@
 #all documentation
 doc/
 
-#all exe files
-*.exe
+#all user_utiliti file files
+documentation.exe.lnk
+execute.exe.lnk
+gitpush.exe.lnk
 
 # Compiled class file
 *.class
