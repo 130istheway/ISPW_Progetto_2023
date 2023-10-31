@@ -19,10 +19,22 @@ public class pane extends articoliAlimentari{
         setDescrizzione(descrizzione);
     }
 
+    /**
+     * Impostare la lievitatura naturale del pane
+     * 
+     * @param lievitatura BOOLEAN serve a capire se la lievitatura è naturale oppure no
+     * @return a void 
+     */
     public void setLievitatura(boolean lievitatura) {
         this.lievitatura = lievitatura;
     }
 
+    /**
+     * Imposta il tempo di cottura in minuti, acetta solo un int (32 bit)
+     * 
+     * @param tempoCottura int il numero di minuti della cottura
+     * @return void
+     */
     public void setTempoCottura(int tempoCottura) {
         this.tempoCottura = tempoCottura;
     }
@@ -33,7 +45,7 @@ public class pane extends articoliAlimentari{
 
     public void setDescrizzione(String descrizzione) {
         if (descrizzione == null) {
-            this.descrizzione = "La descizioen deve essere ancora aggiornata del fornaio";
+            this.descrizzione = "La descizioen per la pizza deve essere ancora aggiornata del fornaio";
         }
         this.descrizzione = descrizzione;
     }
@@ -54,6 +66,7 @@ public class pane extends articoliAlimentari{
         return descrizzione;
     }
 
+
     /**
      * Modifica la qunatità di questa istanza con la possibilità di avere anche porzioni tipo 1/4 1/2 3/4
      * 
@@ -71,6 +84,7 @@ public class pane extends articoliAlimentari{
         }
 
     }
+
 
     /**
      * Questro è un overrive

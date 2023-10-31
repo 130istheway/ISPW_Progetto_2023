@@ -1,25 +1,37 @@
 package Articoli.ArticoliAlimentari;
 
+import java.util.List;
+
 import Articoli.ArticoliAlimentari.articoliAlimentari;
 
 public class pizza extends articoliAlimentari{
     private int tempoCottura;
-    private int tempoLievitatura;
-    private boolean lievitatura;
+    boolean lievitatura;
     private boolean dimensione;
     private String descrizzione;
 
-
-    public void setLievitatura(boolean lievitatura) {
-        this.lievitatura = lievitatura;
+    public pizza(String nome_articolo, double prezzo_articolo, float quantita_articolo, List<String> ingredienti, double peso, int tempoCottura, boolean lievitatura, boolean dimensione ,String descrizzione){
+        super(nome_articolo, prezzo_articolo, quantita_articolo, ingredienti, peso);
+        setTempoCottura(tempoCottura);
+        setLievitatura(lievitatura);
+        setDimensione(dimensione);
+        setDescrizzione(descrizzione);
     }
+
 
     public void setTempoCottura(int tempoCottura) {
         this.tempoCottura = tempoCottura;
     }
 
-    public void setTempoLievitatura(int tempoLievitatura) {
-        this.tempoLievitatura = tempoLievitatura;
+    /**
+     * Impostare la lievitatura naturale del pane
+     * 
+     * @param lievitatura BOOLEAN serve a capire se la lievitatura è naturale oppure no
+     * 
+     * @return a void 
+     */
+    public void setLievitatura(boolean lievitatura) {
+        this.lievitatura = lievitatura;
     }
 
     public void setDimensione(boolean dimensione) {
@@ -27,19 +39,14 @@ public class pizza extends articoliAlimentari{
     }
 
     public void setDescrizzione(String descrizzione) {
+        if (descrizzione == null) {
+            this.descrizzione = "La descizione per la pizza deve essere ancora aggiornata del fornaio";
+        }
         this.descrizzione = descrizzione;
     }
 
     public int getTempoCottura() {
         return tempoCottura;
-    }
-
-    public int getTempoLievitatura() {
-        return tempoLievitatura;
-    }
-
-    public boolean getLievitatura(){
-        return lievitatura;
     }
 
     public boolean getDimensione(){
