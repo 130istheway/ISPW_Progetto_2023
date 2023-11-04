@@ -11,8 +11,8 @@ public class articoliAlimentari extends articoli {
 
     public articoliAlimentari(String nome_articolo, double prezzo_articolo, float quantita_articolo, List<String> ingredienti, double peso) {
         super(nome_articolo, prezzo_articolo, quantita_articolo);
-        setIngredienti(ingredienti);
-        setPeso(peso);
+        this.ingredienti = ingredienti;
+        this.peso = peso;
     }
 
     public void setIngredienti(List<String> ingredienti) {

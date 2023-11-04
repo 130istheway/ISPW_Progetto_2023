@@ -12,9 +12,9 @@ public class articoli {
 
     public articoli(String nome_articolo, double prezzo_articolo, float quantita_articolo){
         setId(get_Random());
-        setNome_articolo(nome_articolo);
-        setPrezzo_articolo(prezzo_articolo);
-        setQuantita_articolo(quantita_articolo);
+        this.nome_articolo = nome_articolo;
+        this.prezzo_articolo = prezzo_articolo;
+        this.quantita_articolo = quantita_articolo;
     }
 
     private void setId(int id) {

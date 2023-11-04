@@ -12,10 +12,10 @@ public class pizza extends articoliAlimentari{
 
     public pizza(String nome_articolo, double prezzo_articolo, float quantita_articolo, List<String> ingredienti, double peso, int tempoCottura, boolean lievitatura, boolean dimensione ,String descrizzione){
         super(nome_articolo, prezzo_articolo, quantita_articolo, ingredienti, peso);
-        setTempoCottura(tempoCottura);
-        setLievitatura(lievitatura);
-        setDimensione(dimensione);
-        setDescrizzione(descrizzione);
+        this.tempoCottura = tempoCottura;
+        this.lievitatura = lievitatura;
+        this.dimensione = dimensione;
+        this.descrizzione = descrizzione;
     }
 
 
