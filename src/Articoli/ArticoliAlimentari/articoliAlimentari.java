@@ -9,6 +9,12 @@ public class articoliAlimentari extends articoli {
     private List<String> ingredienti = new ArrayList<>();
     private double peso;
 
+    public articoliAlimentari(){
+        super();
+        this.ingredienti = new ArrayList<>();
+        this.peso = 0.0;
+    }
+
     public articoliAlimentari(String nome_articolo, double prezzo_articolo, float quantita_articolo, List<String> ingredienti, double peso) {
         super(nome_articolo, prezzo_articolo, quantita_articolo);
         this.ingredienti = ingredienti;

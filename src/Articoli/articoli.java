@@ -8,7 +8,12 @@ public class articoli {
     private double prezzo_articolo;
     private float quantita_articolo;
 
-
+    public articoli(){
+        this.id = -1;
+        this.nome_articolo = "HUBBUHB";
+        this.prezzo_articolo = 0.0;
+        this.quantita_articolo = 0;
+    }
 
     public articoli(String nome_articolo, double prezzo_articolo, float quantita_articolo){
         setId(get_Random());

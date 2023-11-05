@@ -10,6 +10,13 @@ public class pane extends articoliAlimentari{
     private boolean lievitatura;
     private String descrizzione;
 
+    public pane(){
+        super();
+        this.tempoCottura = 0;
+        this.tempoLievitatura = 0;
+        this.descrizzione = "NMUJJ";
+        this.lievitatura = false;
+    }
 
     public pane(String nome_articolo, double prezzo_articolo, float quantita_articolo, List<String> ingredienti, double peso, int tempoCottura, int tempoLievitatura, boolean lievitatura, String descrizzione){
         super(nome_articolo, prezzo_articolo, quantita_articolo, ingredienti, peso);
