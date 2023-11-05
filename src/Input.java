@@ -65,7 +65,7 @@ public class Input {
             nuovo = new pane(nome, prezzo, quantita, ingredienti, peso, tempoCottura, tempoLievitattura, lievitatura, descri);
         }
 
-        System.out.println(nuovo.getId() + " " + nuovo.getNome_articolo()+ " " + nuovo.getPrezzo_articolo());
+        System.out.println(nuovo.getId() + "   Nome:" + nuovo.getNome_articolo()+ "      Prezzo" + nuovo.getPrezzo_articolo());
 
         scanner.close();
     }
