@@ -4,6 +4,7 @@
  */
 
 import Articoli.ArticoliAlimentari.pane;
+import Articoli.articoli;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.Scanner;
 
 public class Input {
     public static void main(String[] args) {
-        pane nuovo = new pane();
+        articoli nuovo = new pane();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Cosa si desidera inserire? pane|pizza");
@@ -64,7 +65,7 @@ public class Input {
             nuovo = new pane(nome, prezzo, quantita, ingredienti, peso, tempoCottura, tempoLievitattura, lievitatura, descri);
         }
 
-        System.out.println(nuovo.getId() + " " + nuovo.getLievitatura()+ " " + nuovo.getDescrizzione());
+        System.out.println(nuovo.getId() + " " + nuovo.getNome_articolo()+ " " + nuovo.getPrezzo_articolo());
 
         scanner.close();
     }
