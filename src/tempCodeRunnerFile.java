@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Input {
+public class tempCodeRunnerFile {
     public static void main(String[] args) {
         articoli nuovo = null; // Dichiaro nuovo inizializzato a null
         Scanner scanner = new Scanner(System.in);
@@ -63,7 +63,7 @@ public class Input {
             String descrizione = scanner.nextLine();
 
             nuovo = new pane(nome, prezzo, quantita, ingredienti, peso, tempoCottura, tempoLievitatura, lievitatura, descrizione);
-        } else if(scelta.equals("pizza")){
+        }else if(scelta.equals("pizza")){
             System.out.print("Inserisci il nome dell'articolo: ");
             String nome = scanner.nextLine();
 
