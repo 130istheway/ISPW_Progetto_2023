@@ -6,7 +6,7 @@ import java.util.List;
 import Articoli.articoli;
 
 /**
- * Questra dpvrebbe essere la classe che gestisce il carello
+ * Questra dovrebbe essere la classe che gestisce il carello
  * utente contiene i dati di utente in modo da poterlo reperire nel db
  * carellino è una lista che contiene gli articoli, usando il polimorfismo un articolo può contenere tutti gli articoli derivati da lui
  * dovrebbe esserci anche il metodo che cntrolla che il pagamento sia avvenuto, inserire un modo per saltare il controllo o fare in modo che inserendo una specifica carta si possa avere la transazione gia eseguita solo per test, per poi pensare a crteare un vero metodo per pagare "realmente"
