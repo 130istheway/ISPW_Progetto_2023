@@ -11,21 +11,33 @@ import java.util.Scanner;
 
 public class Input {
     public static void main(String[] args) {
-        articoli nuovo = null; // Dichiaro nuovo inizializzato a null
         Scanner scanner = new Scanner(System.in);
+        articoli nuovo = null; // Dichiaro nuovo inizializzato a null
 
-        System.out.println("Cosa si desidera inserire? pane|pizza");
-        String scelta = scanner.nextLine();
+        boolean inputValido = false;
 
-        if (scelta.equals("pane")) {
-            pane temporaneo = new pane();
-            temporaneo.inserisciDati();
-            nuovo = temporaneo;
+        while (!inputValido) {
+            try {
+                System.out.println("Cosa si desidera inserire? pane|pizza");
+                String scelta = scanner.nextLine();
 
-        } else if(scelta.equals("pizza")){
-            pizza temporaneo = new pizza();
-            temporaneo.inserisciDati();
-            nuovo = temporaneo;
+                if (scelta.equals("pane")) {
+                    pane temporaneo = new pane();
+                    temporaneo.inserisciDati();
+                    nuovo = temporaneo;
+                    inputValido = true; // L'input è valido, usciamo dal ciclo.
+                } else if (scelta.equals("pizza")) {
+                    pizza temporaneo = new pizza();
+                    temporaneo.inserisciDati();
+                    nuovo = temporaneo;
+                    inputValido = true; // L'input è valido, usciamo dal ciclo.
+                } else {
+                    System.out.println("Scelta non valida. Si prega di inserire 'pane' o 'pizza'.");
+                }
+            } catch (Exception e) {
+                System.out.println("Errore durante l'inserimento. Riprova.");
+                scanner.nextLine(); // Pulisce l'input errato.
+            }
         }
 
         if (nuovo != null) {
