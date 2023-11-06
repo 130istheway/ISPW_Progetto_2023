@@ -1,6 +1,8 @@
 package Articoli.ArticoliAlimentari;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import Articoli.ArticoliAlimentari.articoliAlimentari;
 
@@ -76,6 +78,63 @@ public class pizza extends articoliAlimentari{
             return false;
         }
 
+    }
+
+
+    public void inserisciDati(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Inserisci il nome dell'articolo: ");
+        String nome = scanner.nextLine();
+        setNome_articolo(nome);
+
+        System.out.print("Inserisci il prezzo dell'articolo: ");
+        double prezzo = scanner.nextDouble();
+        setPrezzo_articolo(prezzo);
+
+        System.out.print("Inserisci la quantita dell'articolo: ");
+        float quantita = scanner.nextFloat();
+        setQuantita_articolo(quantita);
+
+        scanner.nextLine(); // Consuma il resto della linea
+
+        List<String> ingredienti = new ArrayList<String>();
+        boolean condition;
+        do {
+            System.out.print("Inserire l'ingrediente del pane: ");
+            String ingrediente = scanner.nextLine();
+
+            ingredienti.add(ingrediente);
+
+            System.out.print("Se ne vuole inserire un altro (true/false): ");
+            condition = scanner.nextBoolean();
+            scanner.nextLine(); // Consuma il resto della linea
+        } while (condition);
+        setIngredienti(ingredienti);
+
+        System.out.print("Inserisci il peso dell'articolo: ");
+        double peso = scanner.nextDouble();
+        setPeso(peso);
+
+        System.out.print("Inserire il tempo di cottura del pane: ");
+        int tempoCottura = scanner.nextInt();
+        setTempoCottura(tempoCottura);
+
+        System.out.print("Inserisci se la lievitatura è naturale o meno (true/false): ");
+        boolean lievitatura = scanner.nextBoolean();
+        setLievitatura(lievitatura);
+
+        System.out.print("Inserisci la dimensione della pizza tonda o rettangolare (true/false): ");
+        boolean dimensione = scanner.nextBoolean();
+        setDimensione(dimensione);
+
+        scanner.nextLine(); // Consuma il resto della linea
+
+        System.out.print("Inserisci la descrizione dell'articolo: ");
+        String descrizione = scanner.nextLine();
+        setDescrizzione(descrizione);
+
+        scanner.close();
     }
 
 }
