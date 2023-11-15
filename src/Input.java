@@ -1,15 +1,27 @@
 /**
+ * La classe {@code Input} rappresenta una classe di input interattivo
+ * per l'inserimento di articoli, come pane o pizza.
+ * Gli autori di questa classe sono Stefano e Simone.
+ *
  * @author Stefano
  * @author Simone
  */
-
 import Articoli.ArticoliAlimentari.pane;
 import Articoli.ArticoliAlimentari.pizza;
 import Articoli.articoli;
 
 import java.util.Scanner;
 
+/**
+ * La classe {@code Input} gestisce l'input interattivo per l'inserimento
+ * di articoli alimentari come pane o pizza.
+ */
 public class Input {
+    /**
+     * Il metodo principale che avvia l'input interattivo.
+     *
+     * @param args Argomenti della riga di comando (non utilizzati in questo contesto)
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         articoli nuovo = null; // Dichiaro nuovo inizializzato a null
