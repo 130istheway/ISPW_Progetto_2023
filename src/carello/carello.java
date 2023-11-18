@@ -17,13 +17,25 @@ public class carello{
 
     /** Flag che indica se il pagamento è stato effettuato */
     boolean pagato = false;
+
+
+    private static carello Instance = null;
+
+
+    public static carello getInstance(List<articoli> carello, boolean pagato) {
+        if (Instance == null) {
+            Instance = new carello(carello, pagato);
+        }
+        return Instance;
+    }
+
     /**
      * Costruttore della classe {@code carello}.
      *
      * @param carello Lista degli articoli nel carrello
      * @param pagato  Flag che indica se il pagamento è stato effettuato
      */
-    public carello(List<articoli> carello, boolean pagato) {
+    protected carello(List<articoli> carello, boolean pagato) {
         this.carellino = carello;
         this.pagato = pagato;
     }
