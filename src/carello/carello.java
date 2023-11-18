@@ -11,13 +11,12 @@ import Articoli.articoli;
  * @author Stefano
  * @author Simone
  */
-public class carello {
+public class carello{
     /** Lista degli articoli nel carrello */
     List<articoli> carellino = new ArrayList<articoli>();
 
     /** Flag che indica se il pagamento è stato effettuato */
     boolean pagato = false;
-
     /**
      * Costruttore della classe {@code carello}.
      *
@@ -64,4 +63,38 @@ public class carello {
     public boolean getPagato() {
         return pagato;
     }
+
+
+    public boolean aggiungiProdotto(articoli prodotto) {
+        try {
+            this.carellino.add(prodotto);
+            return true;
+        } catch (Exception e) {
+            System.err.println("problem whit the insertion of the articolo");
+            return false;
+        }
+        }
+    
+
+    public boolean elimina(int id) {
+        for (articoli articoli : carellino) {
+            if (articoli.getId() == id) {
+                carellino.remove(articoli);
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public boolean modificaQuantita(int id, int quantity) {
+        for (articoli articoli : carellino) {
+            if (articoli.getId() == id) {
+                articoli.setQuantita_articolo(quantity);;
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
