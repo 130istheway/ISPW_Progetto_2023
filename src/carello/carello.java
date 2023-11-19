@@ -1,8 +1,14 @@
+package Carello;
+
+
+import Carello.Articoli.articoli;
+import Carello.Articoli.factory;
+import Carello.Articoli.ArticoliAlimentari.pane;
 
 
 import java.util.ArrayList;
 import java.util.List;
-import Articoli.articoli;
+
 
 /**
  * La classe {@code carello} gestisce il carrello dell'utente, contenente gli articoli selezionati per l'acquisto.
@@ -18,16 +24,32 @@ public class carello{
     /** Flag che indica se il pagamento è stato effettuato */
     boolean pagato = false;
 
+    /**stringhe per riconoscere il tipo del articolo */
+    String pane = "Carello.Articoli.ArticoliAlimentari.pane";
 
     private static carello Instance = null;
 
-
+    public static carello getInstance() {
+        if (Instance == null) {
+            Instance = new carello();
+        }
+        return Instance;
+    }
+    
+    
     public static carello getInstance(List<articoli> carello, boolean pagato) {
         if (Instance == null) {
             Instance = new carello(carello, pagato);
         }
         return Instance;
     }
+
+
+    protected carello(){
+        this.carellino = new ArrayList<articoli>();
+        this.pagato = false;
+    }
+
 
     /**
      * Costruttore della classe {@code carello}.
@@ -85,8 +107,20 @@ public class carello{
             System.err.println("problem whit the insertion of the articolo");
             return false;
         }
-        }
+    }
     
+    
+    public boolean aggiungiProdotto(String s) {
+        articoli prodotto = factory.factoryProdotto(s);
+        try {
+            this.carellino.add(prodotto);
+            return true;
+        } catch (Exception e) {
+            System.err.println("problem whit the insertion of the articolo");
+            return false;
+        }
+    }
+
 
     public boolean elimina(int id) {
         for (articoli articoli : carellino) {
@@ -107,6 +141,19 @@ public class carello{
             }
         }
         return false;
+    }
+
+
+    public void stampaCarellino() {
+        for (articoli articoli : carellino) {
+            System.out.print("ID: " + articoli.getId() + ", Nome: " + articoli.getNome_articolo() + ", Prezzo: " + articoli.getPrezzo_articolo() + ", ClasseDelProdotto: " + articoli.getClass() + "  -> : ");
+            Class<?> c = articoli.getClass();
+            if (c.getName() == pane){
+                pane temp = (pane)articoli;
+                System.out.println("TempoCottura: " + temp.getTempoCottura() + ", Ingredienti: " + temp.getIngredienti() + ", Descrizione: " + temp.getDescrizione());
+            }
+            
+        }
     }
 
 }

@@ -6,11 +6,12 @@
  * @author Stefano
  * @author Simone
  */
-import Articoli.ArticoliAlimentari.pane;
-import Articoli.ArticoliAlimentari.pizza;
-import Articoli.articoli;
+
+import Carello.carello;
+import singleton.MyScanner;
 
 import java.util.Scanner;
+
 
 /**
  * La classe {@code Input} gestisce l'input interattivo per l'inserimento
@@ -23,38 +24,48 @@ public class Input {
      * @param args Argomenti della riga di comando (non utilizzati in questo contesto)
      */
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        articoli nuovo = null; // Dichiaro nuovo inizializzato a null
+        Scanner scanner = MyScanner.getInstance();
+        carello cart = Carello.carello.getInstance();
 
         boolean inputValido = false;
 
-        while (!inputValido) {
-            try {
-                System.out.println("Cosa si desidera inserire? pane|pizza");
-                String scelta = scanner.nextLine();
+        boolean reinput = true;
 
-                if (scelta.equals("pane")) {
-                    pane temporaneo = new pane();
-                    temporaneo.inserisciDati();
-                    nuovo = temporaneo;
-                    inputValido = true; // L'input è valido, usciamo dal ciclo.
-                } else if (scelta.equals("pizza")) {
-                    pizza temporaneo = new pizza();
-                    temporaneo.inserisciDati();
-                    nuovo = temporaneo;
-                    inputValido = true; // L'input è valido, usciamo dal ciclo.
-                } else {
-                    System.out.println("Scelta non valida. Si prega di inserire 'pane' o 'pizza'.");
+        while (reinput) {
+            reinput = false;
+            while (!inputValido) {
+                try {
+                    System.out.println("Cosa si desidera inserire? pane|pizza ~ ");
+                    String scelta = scanner.nextLine();
+
+                    if (scelta.equals("pane")) {
+                        cart.aggiungiProdotto(scelta);
+                        inputValido = true; // L'input è valido, usciamo dal ciclo.
+                    } else if (scelta.equals("pizza")) {
+                        cart.aggiungiProdotto(scelta);
+                        inputValido = true; // L'input è valido, usciamo dal ciclo.
+                    } else {
+                        System.out.println("Scelta non valida. Si prega di inserire 'pane' o 'pizza'.");
+                    }
+                } catch (Exception e) {
+                    System.out.println("Errore durante l'inserimento. Riprova.");
+                    scanner.nextLine(); // Pulisce l'input errato.
                 }
-            } catch (Exception e) {
-                System.out.println("Errore durante l'inserimento. Riprova.");
-                scanner.nextLine(); // Pulisce l'input errato.
             }
+            inputValido = false;
+            
+            System.out.println("\n------------------------------------------------------------------------\nInserire un altro articolo (true/false):");
+            reinput = scanner.nextBoolean();
+            System.out.println("------------------------------------------------------------------------\n");
+
+            scanner.nextLine();
         }
 
-        if (nuovo != null) {
-            System.out.println(nuovo.getId() + " " + nuovo.getNome_articolo() + " " + nuovo.getPrezzo_articolo() + " " + nuovo.getClass());
+        if (cart != null) {
+            System.out.print(cart.getClass() + "  :  Dati: \n");
+            cart.stampaCarellino();
         }
+
 
         scanner.close();
     }

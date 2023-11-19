@@ -1,4 +1,5 @@
-package Articoli.ArticoliAlimentari;
+package Carello.Articoli.ArticoliAlimentari;
+import singleton.MyScanner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -145,7 +146,7 @@ public class pane extends articoliAlimentari{
      * Inserisce i dati dell'articolo interattivamente da tastiera.
      */
     public void inserisciDati() {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = MyScanner.getInstance();
 
         boolean inputValido = false;
 
@@ -207,7 +208,6 @@ public class pane extends articoliAlimentari{
             }
         }
 
-        scanner.close();
     }
 
     /**
