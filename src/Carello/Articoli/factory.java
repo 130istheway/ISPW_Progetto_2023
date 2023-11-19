@@ -1,7 +1,9 @@
 package Carello.Articoli;
 
-import Carello.Articoli.ArticoliAlimentari.pane;
-import Carello.Articoli.ArticoliAlimentari.pizza;
+import Carello.Articoli.ArticoliAlimentari.*;
+//import Carello.Articoli.ArticoliNonAlimentari.*;
+
+//import Qualsiasi articolo si desideri purchè derivi da Carello.Articoli, non dovrebbe essere necessario poichè * pensera ad includere tutto
 
 
 public abstract class factory {
@@ -21,6 +23,8 @@ public abstract class factory {
                 art = pizza;
                 break;
 
+            //case per altri prodotti, basta aggiungere qui la condizzione
+            
             default:
                 art = null;
                 break;
