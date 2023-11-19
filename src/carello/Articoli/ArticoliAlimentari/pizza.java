@@ -15,18 +15,9 @@ import java.util.Scanner;
  */
 public class pizza extends articoliAlimentari {
 
-    /** Tempo di cottura della pizza */
     private int tempoCottura;
-
-    /** Flag per indicare se la pizza è lievitata o meno */
-    private boolean lievitatura;
-
-    /** Flag per indicare la dimensione della pizza (tonda o rettangolare) */
-    private boolean dimensione;
-
-    /** Descrizione della pizza */
+    private boolean lievitatura, dimensione;
     private String descrizione;
-    
 
     /**
      * Costruttore di default. Inizializza gli attributi con valori predefiniti.
@@ -36,7 +27,7 @@ public class pizza extends articoliAlimentari {
         this.tempoCottura = 0;
         this.lievitatura = false;
         this.dimensione = false;
-        this.descrizione = "NUKK";
+        this.descrizione = "NULLPIZZA";
     }
 
     /**
@@ -99,6 +90,23 @@ public class pizza extends articoliAlimentari {
         }
         this.descrizione = descrizione;
     }
+
+    public int getTempoCottura() {
+        return tempoCottura;
+    }
+
+    public boolean getLievitatura() {
+        return lievitatura;
+    }
+
+    public boolean getDiimensione() {
+        return dimensione;
+    }
+
+    public String getDescrizione() {
+        return descrizione;
+    }
+
 
     /**
      * Modifica la quantità dell'articolo con validazione.
