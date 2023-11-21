@@ -43,8 +43,7 @@ public class pizza extends articoliAlimentari {
      * @param dimensione       Flag per indicare la dimensione della pizza
      * @param descrizione      Descrizione dell'articolo
      */
-    public pizza(String nome_articolo, double prezzo_articolo, float quantita_articolo, List<String> ingredienti,
-                 double peso, int tempoCottura, boolean lievitatura, boolean dimensione, String descrizione) {
+    public pizza(String nome_articolo, double prezzo_articolo, float quantita_articolo, List<String> ingredienti, double peso, int tempoCottura, boolean lievitatura, boolean dimensione, String descrizione) {
         super(nome_articolo, prezzo_articolo, quantita_articolo, ingredienti, peso);
         this.tempoCottura = tempoCottura;
         this.lievitatura = lievitatura;
@@ -91,18 +90,22 @@ public class pizza extends articoliAlimentari {
         this.descrizione = descrizione;
     }
 
+    /** */
     public int getTempoCottura() {
         return tempoCottura;
     }
 
+    /** */
     public boolean getLievitatura() {
         return lievitatura;
     }
 
-    public boolean getDiimensione() {
+    /** */
+    public boolean getDimensione() {
         return dimensione;
     }
 
+    /* */
     public String getDescrizione() {
         return descrizione;
     }
@@ -190,6 +193,29 @@ public class pizza extends articoliAlimentari {
         }
 
         
+    }
+
+    @SuppressWarnings (value="unchecked")
+
+    public void inserisciDati(List<Object> ins){
+
+        setNome_articolo((String)ins.get(0));
+                
+        setPrezzo_articolo((double)ins.get(1));
+                
+        setQuantita_articolo((float)ins.get(2));
+        
+        setIngredienti((List<String>)ins.get(3));
+                
+        setPeso((double)ins.get(4));
+                
+        setTempoCottura((int)ins.get(5));
+
+        setLievitatura((boolean)ins.get(6));
+
+        setDimensione((boolean)ins.get(7));
+
+        setDescrizione((String)ins.get(8));
     }
 }
 

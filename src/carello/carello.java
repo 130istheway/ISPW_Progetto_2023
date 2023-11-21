@@ -3,7 +3,7 @@ package Carello;
 
 import Carello.Articoli.articoli;
 import Carello.Articoli.factory;
-import Carello.Articoli.ArticoliAlimentari.pane;
+import Carello.Articoli.ArticoliAlimentari.*;
 
 
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ public class carello{
     boolean pagato = false;
 
     /**stringhe per riconoscere il tipo del articolo */
-    String pane = "Carello.Articoli.ArticoliAlimentari.pane";
+    String pane = "Carello.Articoli.ArticoliAlimentari.pane", pizza = "Carello.Articoli.ArticoliAlimentari.pizza";
 
     private static carello Instance = null;
 
@@ -121,6 +121,18 @@ public class carello{
         }
     }
 
+    public boolean aggiungiProdotto(List<Object> inserire) {
+
+        articoli prodotto = factory.factoryProdotto(inserire);
+        try {
+            this.carellino.add(prodotto);
+            return true;
+        } catch (Exception e) {
+            System.err.println("problem whit the insertion of the articolo");
+            return false;
+        }
+    }
+
 
     public boolean elimina(int id) {
         for (articoli articoli : carellino) {
@@ -151,6 +163,11 @@ public class carello{
             if (c.getName() == pane){
                 pane temp = (pane)articoli;
                 System.out.println("TempoCottura: " + temp.getTempoCottura() + ", Ingredienti: " + temp.getIngredienti() + ", Descrizione: " + temp.getDescrizione());
+            }else if (c.getName() == pizza) {
+                pizza temp = (pizza)articoli;
+                System.out.println("Dimensione : " + temp.getDimensione() + ", lievitatura : " + temp.getLievitatura() + ", Descrizione: " + temp.getDescrizione());
+            } else {
+                System.out.println("I don't know the type probabli is an error");
             }
             
         }

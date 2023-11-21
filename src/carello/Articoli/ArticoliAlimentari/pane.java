@@ -1,4 +1,5 @@
 package Carello.Articoli.ArticoliAlimentari;
+
 import singleton.MyScanner;
 
 import java.util.ArrayList;
@@ -14,8 +15,7 @@ import java.util.Scanner;
  */
 public class pane extends articoliAlimentari{
 
-    private int tempoCottura;
-    private int tempoLievitatura;
+    private int tempoCottura, tempoLievitatura;
     private boolean lievitatura;
     private String descrizione;
 
@@ -26,7 +26,7 @@ public class pane extends articoliAlimentari{
         super();
         this.tempoCottura = 0;
         this.tempoLievitatura = 0;
-        this.descrizione = "NMUJJ";
+        this.descrizione = "NULLPANE";
         this.lievitatura = false;
     }
 
@@ -43,8 +43,7 @@ public class pane extends articoliAlimentari{
      * @param lievitatura       Flag per indicare se la lievitatura è naturale o meno
      * @param descrizione      Descrizione dell'articolo
      */
-    public pane(String nome_articolo, double prezzo_articolo, float quantita_articolo, List<String> ingredienti,
-                double peso, int tempoCottura, int tempoLievitatura, boolean lievitatura, String descrizione) {
+    public pane(String nome_articolo, double prezzo_articolo, float quantita_articolo, List<String> ingredienti, double peso, int tempoCottura, int tempoLievitatura, boolean lievitatura, String descrizione) {
         super(nome_articolo, prezzo_articolo, quantita_articolo, ingredienti, peso);
         this.tempoCottura = tempoCottura;
         this.tempoLievitatura = tempoLievitatura;
@@ -209,6 +208,30 @@ public class pane extends articoliAlimentari{
         }
 
     }
+    
+    @SuppressWarnings (value="unchecked")
+
+    public void inserisciDati(List<Object> ins){
+
+        setNome_articolo((String)ins.get(0));
+                
+        setPrezzo_articolo((double)ins.get(1));
+                
+        setQuantita_articolo((float)ins.get(2));
+                
+        setIngredienti((List<String>)ins.get(3));
+                
+        setPeso((double)ins.get(4));
+                
+        setTempoCottura((int)ins.get(5));
+
+        setTempoLievitatura((int)ins.get(6));
+
+        setLievitatura((boolean)ins.get(7));
+
+        setDescrizione((String)ins.get(8));
+
+    }
 
     /**
      * Override del metodo setIngredienti per gestire il caso in cui la lista degli ingredienti è vuota.
@@ -223,5 +246,6 @@ public class pane extends articoliAlimentari{
         }
         super.setIngredienti(ingredienti);
     }
+
 }
 

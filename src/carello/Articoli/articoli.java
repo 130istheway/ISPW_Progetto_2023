@@ -7,6 +7,8 @@ package Carello.Articoli;
  * @author Stefano
  * @author Simone
  */
+
+ 
 public class articoli {
     /** ID univoco dell'articolo */
     private int id;
@@ -25,7 +27,7 @@ public class articoli {
      * Inizializza gli attributi con valori predefiniti.
      */
     public articoli() {
-        this.id = -1;
+        setId(get_Random());
         this.nome_articolo = "HUBBUHB";
         this.prezzo_articolo = 0.0;
         this.quantita_articolo = 0;
