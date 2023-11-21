@@ -13,6 +13,9 @@ doc/
 # BlueJ files
 *.ctxt
 
+# File uml
+da finire.mdj
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
