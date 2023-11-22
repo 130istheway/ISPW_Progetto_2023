@@ -1,9 +1,9 @@
-package Carello;
+package carello;
 
 
-import Carello.Articoli.articoli;
-import Carello.Articoli.factory;
-import Carello.Articoli.ArticoliAlimentari.*;
+import carello.Articoli.articoli;
+import carello.Articoli.factory;
+import carello.Articoli.ArticoliAlimentari.*;
 
 
 import java.util.ArrayList;

@@ -7,7 +7,7 @@
  * @author Simone
  */
 
-import Carello.carello;
+import carello.carello;
 import singleton.MyScanner;
 
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ public class Input {
     public static void main(String[] args) {
 
         Scanner scanner = MyScanner.getInstance();
-        carello cart = Carello.carello.getInstance();
+        carello cart = carello.getInstance();
 
         boolean inputValido = false, reinput = true, cech = true;
 
