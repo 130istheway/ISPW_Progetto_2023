@@ -1,4 +1,4 @@
-package carello.Articoli;
+package Carello.Articoli;
 /**
  * La classe {@code articoli} rappresenta una classe di base per gli articoli.
  * Contiene attributi come ID, nome, prezzo e quantità dell'articolo.

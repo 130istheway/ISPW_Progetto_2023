@@ -1,4 +1,4 @@
-package carello.Articoli.ArticoliAlimentari;
+package Carello.Articoli.ArticoliAlimentari;
 
 import singleton.MyScanner;
 
