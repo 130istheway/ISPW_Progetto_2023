@@ -1,6 +1,6 @@
-package Carello.Articoli.ArticoliAlimentari;
+package Carrello.Articoli.ArticoliAlimentari;
 
-import Carello.Articoli.articoli;
+import Carrello.Articoli.articoli;
 
 import java.util.ArrayList;
 import java.util.List;

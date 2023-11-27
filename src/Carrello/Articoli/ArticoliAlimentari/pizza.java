@@ -1,4 +1,4 @@
-package Carello.Articoli.ArticoliAlimentari;
+package Carrello.Articoli.ArticoliAlimentari;
 
 import singleton.MyScanner;
 
@@ -7,124 +7,109 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * La classe {@code pane} rappresenta un tipo specifico di articolo alimentare,
- * con attributi specifici come tempo di cottura, tempo di lievitatura, lievitatura naturale e descrizione.
+ * La classe {@code pizza} rappresenta un tipo specifico di articolo alimentare,
+ * con attributi specifici come tempo di cottura, lievitatura, dimensione e descrizione.
  * Estende la classe {@code articoliAlimentari}.
  * @author Stefano
  * @author Simone
  */
-public class pane extends articoliAlimentari{
+public class pizza extends articoliAlimentari {
 
-    private int tempoCottura, tempoLievitatura;
-    private boolean lievitatura;
+    private int tempoCottura;
+    private boolean lievitatura, dimensione;
     private String descrizione;
 
     /**
      * Costruttore di default. Inizializza gli attributi con valori predefiniti.
      */
-    public pane() {
+    public pizza() {
         super();
         this.tempoCottura = 0;
-        this.tempoLievitatura = 0;
-        this.descrizione = "NULLPANE";
         this.lievitatura = false;
+        this.dimensione = false;
+        this.descrizione = "NULLPIZZA";
     }
 
     /**
-     * Costruttore che consente di specificare tutti gli attributi del pane.
+     * Costruttore che consente di specificare tutti gli attributi della pizza.
      *
      * @param nome_articolo    Nome dell'articolo
      * @param prezzo_articolo  Prezzo dell'articolo
      * @param quantita_articolo Quantità dell'articolo
      * @param ingredienti      Lista degli ingredienti
      * @param peso             Peso dell'articolo
-     * @param tempoCottura     Tempo di cottura del pane
-     * @param tempoLievitatura Tempo di lievitatura del pane
-     * @param lievitatura       Flag per indicare se la lievitatura è naturale o meno
+     * @param tempoCottura     Tempo di cottura della pizza
+     * @param lievitatura       Flag per indicare se la pizza è lievitata o meno
+     * @param dimensione       Flag per indicare la dimensione della pizza
      * @param descrizione      Descrizione dell'articolo
      */
-    public pane(String nome_articolo, double prezzo_articolo, float quantita_articolo, List<String> ingredienti, double peso, int tempoCottura, int tempoLievitatura, boolean lievitatura, String descrizione) {
+    public pizza(String nome_articolo, double prezzo_articolo, float quantita_articolo, List<String> ingredienti, double peso, int tempoCottura, boolean lievitatura, boolean dimensione, String descrizione) {
         super(nome_articolo, prezzo_articolo, quantita_articolo, ingredienti, peso);
         this.tempoCottura = tempoCottura;
-        this.tempoLievitatura = tempoLievitatura;
         this.lievitatura = lievitatura;
+        this.dimensione = dimensione;
         this.descrizione = descrizione;
     }
 
     /**
-     * Imposta il tempo di cottura del pane.
+     * Imposta il tempo di cottura della pizza.
      *
-     * @param tempoCottura Tempo di cottura del pane
+     * @param tempoCottura Tempo di cottura della pizza
      */
     public void setTempoCottura(int tempoCottura) {
         this.tempoCottura = tempoCottura;
     }
 
     /**
-     * Imposta il tempo di lievitatura del pane.
+     * Imposta la lievitatura della pizza.
      *
-     * @param tempoLievitatura Tempo di lievitatura del pane
-     */
-    public void setTempoLievitatura(int tempoLievitatura) {
-        this.tempoLievitatura = tempoLievitatura;
-    }
-
-    /**
-     * Imposta la lievitatura del pane.
-     *
-     * @param lievitatura Flag per indicare se la lievitatura è naturale o meno
+     * @param lievitatura Flag per indicare se la pizza è lievitata o meno
      */
     public void setLievitatura(boolean lievitatura) {
         this.lievitatura = lievitatura;
     }
 
     /**
-     * Imposta la descrizione dell'articolo.
+     * Imposta la dimensione della pizza.
      *
-     * @param descrizione Descrizione dell'articolo
+     * @param dimensione Flag per indicare la dimensione della pizza
+     */
+    public void setDimensione(boolean dimensione) {
+        this.dimensione = dimensione;
+    }
+
+    /**
+     * Imposta la descrizione della pizza.
+     *
+     * @param descrizione Descrizione della pizza
      */
     public void setDescrizione(String descrizione) {
         if (descrizione == null) {
-            this.descrizione = "La descrizione per il pane deve essere ancora aggiornata dal fornaio";
+            this.descrizione = "La descrizione per la pizza deve essere ancora aggiornata dal fornaio";
         }
         this.descrizione = descrizione;
     }
 
-    /**
-     * Restituisce il tempo di cottura del pane.
-     *
-     * @return Tempo di cottura del pane
-     */
+    /** */
     public int getTempoCottura() {
         return tempoCottura;
     }
 
-    /**
-     * Restituisce il tempo di lievitatura del pane.
-     *
-     * @return Tempo di lievitatura del pane
-     */
-    public int getTempoLievitatura() {
-        return tempoLievitatura;
-    }
-
-    /**
-     * Restituisce la lievitatura del pane.
-     *
-     * @return True se la lievitatura è naturale, altrimenti false
-     */
+    /** */
     public boolean getLievitatura() {
         return lievitatura;
     }
 
-    /**
-     * Restituisce la descrizione dell'articolo.
-     *
-     * @return Descrizione dell'articolo
-     */
+    /** */
+    public boolean getDimensione() {
+        return dimensione;
+    }
+
+    /* */
     public String getDescrizione() {
         return descrizione;
     }
+
 
     /**
      * Modifica la quantità dell'articolo con validazione.
@@ -132,8 +117,8 @@ public class pane extends articoliAlimentari{
      * @param quantita Nuova quantità dell'articolo
      * @return True se la quantità è stata modificata con successo, altrimenti false
      */
-    public boolean Cambia_Quantita_articolo(float quantita) {
-        if (getQuantita_articolo() > quantita && quantita > ((float) (1 / 4))) {
+    public boolean Cambia_Quantita_articolo(int quantita) {
+        if (getQuantita_articolo() > quantita && getQuantita_articolo() > 0) {
             setQuantita_articolo(quantita);
             return true;
         } else {
@@ -182,17 +167,17 @@ public class pane extends articoliAlimentari{
                 double peso = scanner.nextDouble();
                 setPeso(peso);
 
-                System.out.print("Inserire il tempo di cottura del pane: ");
+                System.out.print("Inserire il tempo di cottura della pizza: ");
                 int tempoCottura = scanner.nextInt();
                 setTempoCottura(tempoCottura);
-
-                System.out.print("Inserire il tempo di lievitatura del pane: ");
-                int tempoLievitatura = scanner.nextInt();
-                setTempoLievitatura(tempoLievitatura);
 
                 System.out.print("Inserisci se la lievitatura è naturale o meno (true/false): ");
                 boolean lievitatura = scanner.nextBoolean();
                 setLievitatura(lievitatura);
+
+                System.out.print("Inserisci la dimensione della pizza (tonda o rettangolare) (true/false): ");
+                boolean dimensione = scanner.nextBoolean();
+                setDimensione(dimensione);
 
                 scanner.nextLine(); // Consuma il resto della linea
 
@@ -207,8 +192,9 @@ public class pane extends articoliAlimentari{
             }
         }
 
+        
     }
-    
+
     @SuppressWarnings (value="unchecked")
 
     public void inserisciDati(List<Object> ins){
@@ -218,34 +204,18 @@ public class pane extends articoliAlimentari{
         setPrezzo_articolo((double)ins.get(1));
                 
         setQuantita_articolo((float)ins.get(2));
-                
+        
         setIngredienti((List<String>)ins.get(3));
                 
         setPeso((double)ins.get(4));
                 
         setTempoCottura((int)ins.get(5));
 
-        setTempoLievitatura((int)ins.get(6));
+        setLievitatura((boolean)ins.get(6));
 
-        setLievitatura((boolean)ins.get(7));
+        setDimensione((boolean)ins.get(7));
 
         setDescrizione((String)ins.get(8));
-
     }
-
-    /**
-     * Override del metodo setIngredienti per gestire il caso in cui la lista degli ingredienti è vuota.
-     *
-     * @param ingredienti Lista degli ingredienti
-     */
-    @Override
-    public void setIngredienti(List<String> ingredienti) {
-        if (ingredienti.size() == 0) {
-            ingredienti.add("Ingredienti non disponibili");
-            setIngredienti(ingredienti);
-        }
-        super.setIngredienti(ingredienti);
-    }
-
 }
 
