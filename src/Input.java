@@ -44,18 +44,12 @@ public class Input {
 
                     if (scelta.equals("pane") || scelta.equals("pizza")) {
 
-                        System.out.print("Scegliere come inserire l'input\t\t0) classe\t1) lista\t:\t");
+                        System.out.print("Scegliere come inserire l'input\t\t0) classe non più utilizabile\t1) lista\t:\t");
                         int inputSceltaInserimento = scanner.nextInt();
 
                         scanner.nextLine(); // Consuma il resto della linea
 
-                        if (inputSceltaInserimento == 0) {
-
-                            cart.aggiungiProdotto(scelta);
-                            inputValido = true; // L'input è valido, usciamo dal ciclo.
-
-                        } else{
-
+                        if (inputSceltaInserimento == 1) {
                             List<Object> list = new ArrayList<Object>();
                             list.add(scelta);
                             
@@ -149,6 +143,7 @@ public class Input {
                     scanner.nextLine(); // Pulisce l'input errato.
                 }
             }
+
             inputValido = false;
             
             if(cech){

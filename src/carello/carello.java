@@ -109,18 +109,6 @@ public class carello{
         }
     }
     
-    
-    public boolean aggiungiProdotto(String s) {
-        articoli prodotto = factory.factoryProdotto(s);
-        try {
-            this.carellino.add(prodotto);
-            return true;
-        } catch (Exception e) {
-            System.err.println("problem whit the insertion of the articolo");
-            return false;
-        }
-    }
-
     public boolean aggiungiProdotto(List<Object> inserire) {
 
         articoli prodotto = factory.factoryProdotto(inserire);
@@ -159,18 +147,16 @@ public class carello{
     public void stampaCarellino() {
         for (articoli articoli : carellino) {
             System.out.print("ID: " + articoli.getId() + ", Nome: " + articoli.getNome_articolo() + ", Prezzo: " + articoli.getPrezzo_articolo() + ", ClasseDelProdotto: " + articoli.getClass() + "  -> : ");
-            Class<?> c = articoli.getClass();
-            if (c.getName() == pane){
+
+            if( articoli instanceof pane) {
                 pane temp = (pane)articoli;
                 System.out.println("TempoCottura: " + temp.getTempoCottura() + ", Ingredienti: " + temp.getIngredienti() + ", Descrizione: " + temp.getDescrizione());
-            }else if (c.getName() == pizza) {
+            } else if (articoli instanceof pizza) {          
                 pizza temp = (pizza)articoli;
                 System.out.println("Dimensione : " + temp.getDimensione() + ", lievitatura : " + temp.getLievitatura() + ", Descrizione: " + temp.getDescrizione());
             } else {
                 System.out.println("I don't know the type probabli is an error");
             }
-            
         }
     }
-
 }

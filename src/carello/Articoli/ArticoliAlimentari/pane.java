@@ -141,86 +141,19 @@ public class pane extends articoliAlimentari{
         }
     }
 
-    /**
-     * Inserisce i dati dell'articolo interattivamente da tastiera.
-     */
-    public void inserisciDati() {
-        Scanner scanner = MyScanner.getInstance();
-
-        boolean inputValido = false;
-
-        while (!inputValido) {
-            try {
-                System.out.print("Inserisci il nome dell'articolo: ");
-                String nome = scanner.nextLine();
-                setNome_articolo(nome);
-
-                System.out.print("Inserisci il prezzo dell'articolo: ");
-                double prezzo = scanner.nextDouble();
-                setPrezzo_articolo(prezzo);
-
-                System.out.print("Inserisci la quantità dell'articolo: ");
-                float quantita = scanner.nextFloat();
-                setQuantita_articolo(quantita);
-
-                scanner.nextLine(); // Consuma il resto della linea
-
-                List<String> ingredienti = new ArrayList<String>();
-                boolean condition;
-                do {
-                    System.out.print("Inserire un ingrediente: ");
-                    String ingrediente = scanner.nextLine();
-                    ingredienti.add(ingrediente);
-
-                    System.out.print("Vuoi inserire un altro ingrediente? (true/false): ");
-                    condition = scanner.nextBoolean();
-                    scanner.nextLine(); // Consuma il resto della linea
-                } while (condition);
-                setIngredienti(ingredienti);
-
-                System.out.print("Inserisci il peso dell'articolo: ");
-                double peso = scanner.nextDouble();
-                setPeso(peso);
-
-                System.out.print("Inserire il tempo di cottura del pane: ");
-                int tempoCottura = scanner.nextInt();
-                setTempoCottura(tempoCottura);
-
-                System.out.print("Inserire il tempo di lievitatura del pane: ");
-                int tempoLievitatura = scanner.nextInt();
-                setTempoLievitatura(tempoLievitatura);
-
-                System.out.print("Inserisci se la lievitatura è naturale o meno (true/false): ");
-                boolean lievitatura = scanner.nextBoolean();
-                setLievitatura(lievitatura);
-
-                scanner.nextLine(); // Consuma il resto della linea
-
-                System.out.print("Inserisci la descrizione dell'articolo: ");
-                String descrizione = scanner.nextLine();
-                setDescrizione(descrizione);
-
-                inputValido = true;
-            } catch (Exception e) {
-                System.out.println("Inserimento non valido. Riprova.");
-                scanner.nextLine(); // Consuma il resto della linea
-            }
-        }
-
-    }
     
     @SuppressWarnings (value="unchecked")
 
     public void inserisciDati(List<Object> ins){
 
         setNome_articolo((String)ins.get(0));
-                
+        
         setPrezzo_articolo((double)ins.get(1));
-                
+        
         setQuantita_articolo((float)ins.get(2));
-                
+        
         setIngredienti((List<String>)ins.get(3));
-                
+        
         setPeso((double)ins.get(4));
                 
         setTempoCottura((int)ins.get(5));

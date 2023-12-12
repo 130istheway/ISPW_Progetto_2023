@@ -117,83 +117,14 @@ public class pizza extends articoliAlimentari {
      * @param quantita Nuova quantità dell'articolo
      * @return True se la quantità è stata modificata con successo, altrimenti false
      */
-    public boolean Cambia_Quantita_articolo(int quantita) {
+    public void Cambia_Quantita_articolo(int quantita) throws IllegalArgumentException{
         if (getQuantita_articolo() > quantita && getQuantita_articolo() > 0) {
             setQuantita_articolo(quantita);
-            return true;
         } else {
-            return false;
+            throw new IllegalArgumentException("illegal quantità");
         }
     }
 
-    /**
-     * Inserisce i dati dell'articolo interattivamente da tastiera.
-     */
-    public void inserisciDati() {
-        Scanner scanner = MyScanner.getInstance();
-
-        boolean inputValido = false;
-
-        while (!inputValido) {
-            try {
-                System.out.print("Inserisci il nome dell'articolo: ");
-                String nome = scanner.nextLine();
-                setNome_articolo(nome);
-
-                System.out.print("Inserisci il prezzo dell'articolo: ");
-                double prezzo = scanner.nextDouble();
-                setPrezzo_articolo(prezzo);
-
-                System.out.print("Inserisci la quantità dell'articolo: ");
-                float quantita = scanner.nextFloat();
-                setQuantita_articolo(quantita);
-
-                scanner.nextLine(); // Consuma il resto della linea
-
-                List<String> ingredienti = new ArrayList<String>();
-                boolean condition;
-                do {
-                    System.out.print("Inserire un ingrediente: ");
-                    String ingrediente = scanner.nextLine();
-                    ingredienti.add(ingrediente);
-
-                    System.out.print("Vuoi inserire un altro ingrediente? (true/false): ");
-                    condition = scanner.nextBoolean();
-                    scanner.nextLine(); // Consuma il resto della linea
-                } while (condition);
-                setIngredienti(ingredienti);
-
-                System.out.print("Inserisci il peso dell'articolo: ");
-                double peso = scanner.nextDouble();
-                setPeso(peso);
-
-                System.out.print("Inserire il tempo di cottura della pizza: ");
-                int tempoCottura = scanner.nextInt();
-                setTempoCottura(tempoCottura);
-
-                System.out.print("Inserisci se la lievitatura è naturale o meno (true/false): ");
-                boolean lievitatura = scanner.nextBoolean();
-                setLievitatura(lievitatura);
-
-                System.out.print("Inserisci la dimensione della pizza (tonda o rettangolare) (true/false): ");
-                boolean dimensione = scanner.nextBoolean();
-                setDimensione(dimensione);
-
-                scanner.nextLine(); // Consuma il resto della linea
-
-                System.out.print("Inserisci la descrizione dell'articolo: ");
-                String descrizione = scanner.nextLine();
-                setDescrizione(descrizione);
-
-                inputValido = true;
-            } catch (Exception e) {
-                System.out.println("Inserimento non valido. Riprova.");
-                scanner.nextLine(); // Consuma il resto della linea
-            }
-        }
-
-        
-    }
 
     @SuppressWarnings (value="unchecked")
 
@@ -216,6 +147,7 @@ public class pizza extends articoliAlimentari {
         setDimensione((boolean)ins.get(7));
 
         setDescrizione((String)ins.get(8));
+    
     }
 }
 
