@@ -1,9 +1,9 @@
-package Carello;
+package Carrello;
 
 
-import Carello.Articoli.articoli;
-import Carello.Articoli.factory;
-import Carello.Articoli.ArticoliAlimentari.*;
+import Carrello.Articoli.articoli;
+import Carrello.Articoli.factory;
+import Carrello.Articoli.ArticoliAlimentari.*;
 
 
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ import java.util.List;
  * @author Stefano
  * @author Simone
  */
-public class carello{
+public class carrello{
     /** Lista degli articoli nel carrello */
     List<articoli> carellino = new ArrayList<articoli>();
 
@@ -26,26 +26,9 @@ public class carello{
 
     /**stringhe per riconoscere il tipo del articolo */
     String pane = "Carello.Articoli.ArticoliAlimentari.pane", pizza = "Carello.Articoli.ArticoliAlimentari.pizza";
-
-    private static carello Instance = null;
-
-    public static carello getInstance() {
-        if (Instance == null) {
-            Instance = new carello();
-        }
-        return Instance;
-    }
     
-    
-    public static carello getInstance(List<articoli> carello, boolean pagato) {
-        if (Instance == null) {
-            Instance = new carello(carello, pagato);
-        }
-        return Instance;
-    }
 
-
-    protected carello(){
+    public carrello(){
         this.carellino = new ArrayList<articoli>();
         this.pagato = false;
     }
@@ -57,7 +40,7 @@ public class carello{
      * @param carello Lista degli articoli nel carrello
      * @param pagato  Flag che indica se il pagamento è stato effettuato
      */
-    protected carello(List<articoli> carello, boolean pagato) {
+    protected carrello(List<articoli> carello, boolean pagato) {
         this.carellino = carello;
         this.pagato = pagato;
     }

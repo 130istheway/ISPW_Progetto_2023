@@ -1,8 +1,8 @@
-package Carello.Articoli;
+package Carrello.Articoli;
 
 import java.util.List;
 
-import Carello.Articoli.ArticoliAlimentari.*;
+import Carrello.Articoli.ArticoliAlimentari.*;
 //import Carello.Articoli.ArticoliNonAlimentari.*;
 //import Qualsiasi articolo si desideri purchè derivi da Carello.Articoli, non dovrebbe essere necessario poichè * pensera ad includere tutto
 
